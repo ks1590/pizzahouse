@@ -22,7 +22,7 @@
 
     @foreach($pizzas as $pizza)
       <div>
-        {{ $pizza['type'] }} - {{ $pizza['base'] }}
+        {{ $pizza->name }} - {{ $pizza->type }} - {{ $pizza->base }}
       </div>
     @endforeach                
   </div>

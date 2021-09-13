@@ -1,30 +1,12 @@
 @extends('layouts.layout')
-@section('content')
-<div class="flex-center position-ref full-height">
-  @if (Route::has('login'))
-    <div class="top-right links">
-      @auth
-        <a href="{{ url('/home') }}">Home</a>
-      @else
-        <a href="{{ route('login') }}">Login</a>
-
-        @if (Route::has('register'))
-            <a href="{{ route('register') }}">Register</a>
-        @endif
-      @endauth
+@section('content')            
+<div class="weapper pizza-index">
+  <h1>Pizzza Orders</h1>
+  @foreach($pizzas as $pizza)
+    <div class="pizza-item">
+      <img src="/img/pizza.png" alt="pizza icon">
+      <h4><a href="/pizzas/{{ $pizza->id }}"></a>{{ $pizza->name }}</h4>
     </div>
-  @endif
-
-  <div class="content">
-    <div class="title m-b-md">
-      Pizzas List
-    </div>                
-
-    @foreach($pizzas as $pizza)
-      <div>
-        {{ $pizza->name }} - {{ $pizza->type }} - {{ $pizza->base }}
-      </div>
-    @endforeach                
-  </div>
-</div>   
+  @endforeach
+</div>
 @endsection

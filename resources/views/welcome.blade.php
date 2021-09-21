@@ -21,7 +21,7 @@
       Pizza House
     </div>
     <p class="mssg">{{ session('msg') }}</p>
-    <a href="/pizzas/create">Create Pizza</a>
+    <a href="{{ route('pizzas.create') }}">Create Pizza</a>
   </div>
 </div>    
 @endsection
